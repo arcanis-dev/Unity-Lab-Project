@@ -12,11 +12,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/FollowCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/BallManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E3232360-D51C-46C7-86DD-547E2F0B3F8B/dd/ce3b200f/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Assets/FollowCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/BallManager.cs" />
       </list>
     </option>
@@ -68,6 +71,8 @@
       <option name="presentableId" value="Default" />
       <updated>1572954080336</updated>
       <workItem from="1572954082260" duration="1486000" />
+      <workItem from="1574155889281" duration="7888000" />
+      <workItem from="1574169921084" duration="908000" />
     </task>
     <servers />
   </component>
@@ -81,7 +86,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

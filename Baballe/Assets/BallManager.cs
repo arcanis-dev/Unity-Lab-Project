@@ -12,7 +12,7 @@ public class BallManager : MonoBehaviour {
     public float throwForceMin = 1f;
     public float throwForceMax = 5f;
     public float upForce = 1.2f;
-    public float throwAmount;
+    public float throwAmount = 1.5f;
     
     public bool hasBall = true;
 
@@ -30,19 +30,13 @@ public class BallManager : MonoBehaviour {
             if (hasBall) {
                 //Start throwing
                 this.ThrowBall();
-                //StartCoroutine(this.TestCor());
+                StartCoroutine(this.ThrowBall());
             }
             else if(!this.hasBall){
                 this.RecallBall();
             }
-        }else if (Input.GetButton("Fire1")) {
-            
-        }else if (Input.GetButtonUp("Fire1")) {
-            if (this.hasBall) {
-                
-            }
         }
-
+        
         Debug.Log("iskine" + this.ballRigidbody.isKinematic);
         Debug.Log("usegrav" + this.ballRigidbody.useGravity);
         
@@ -50,20 +44,24 @@ public class BallManager : MonoBehaviour {
 
     private IEnumerator TestCor() {
         while (Input.GetButton("Fire1")) {
-            Debug.Log("test");
+            Debug.Log("yes");
+            yield return null;
         }
         yield return null;
     }
 
-    private void ThrowBall() {
+    private IEnumerator ThrowBall() {
         float throwForce = this.throwForceMin;
         Debug.Log("throw");
 
-        if(Input.GetButton("Fire1")) {
-            throwForce += throwAmount +Time.deltaTime;
+        while (Input.GetButton("Fire1")) {
+            throwForce += throwAmount;
+            yield return null;
         }
 
         if (Input.GetButtonUp("Fire1")) {
+            throwForce = Mathf.Clamp(throwForce, this.throwForceMin, this.throwForceMax);
+            Debug.Log(throwForce);
             this.hasBall = false;
             EnableBall(true);
             this.ballRigidbody.AddForce(this.hand.forward * throwForce + this.hand.up * upForce, ForceMode.Impulse);

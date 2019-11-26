@@ -42,14 +42,6 @@ public class BallManager : MonoBehaviour {
         
     }
 
-    private IEnumerator TestCor() {
-        while (Input.GetButton("Fire1")) {
-            Debug.Log("yes");
-            yield return null;
-        }
-        yield return null;
-    }
-
     private IEnumerator ThrowBall() {
         float throwForce = this.throwForceMin;
         Debug.Log("throw");
@@ -64,7 +56,7 @@ public class BallManager : MonoBehaviour {
             Debug.Log(throwForce);
             this.hasBall = false;
             EnableBall(true);
-            this.ballRigidbody.AddForce(this.hand.forward * throwForce + this.hand.up * upForce, ForceMode.Impulse);
+            this.ballRigidbody.AddForce(this.hand.forward * throwForce + this.hand.up * this.upForce, ForceMode.Impulse);
         }
         
     }

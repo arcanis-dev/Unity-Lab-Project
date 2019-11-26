@@ -271,6 +271,7 @@
             </e>
           </e>
         </e>
+        <e p="StickyBallBehaviour.cs" t="Include" />
       </e>
       <e p="Baballe.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
